@@ -1,0 +1,142 @@
+*{
+    box-sizing:border-box;
+}
+body{
+    background-color:lightblue;
+}
+h1{
+    background-color:orange;
+    font-family:Verdana;
+    font-size:2em;
+    text-align:center;
+}
+.odd{
+    color:blue;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1em;
+    font-weight:200;
+    font-style:normal;
+}
+.even{
+    color:red;
+}
+.titles{
+    color:black;
+    font-weight:300;
+}
+#p5{
+    border: 2px solid green;
+    border-radius:10px;
+}
+#more-borders{
+    border-top: 2px solid blue;
+    border-left: 1px dotted green;
+    border-right: 1px dotted orange;
+    border-bottom: 2px solid red;
+}
+#text-shadows{
+    text-shadow:5px 10px 2px red;
+}
+#box{
+    height:200px;
+    width:200px;
+    background-color:red;
+    box-shadow:1px 10px 10px blue;
+}
+.box{
+    height:50px;
+    width:50px;
+    background-color:blue;
+    margin-top:50px;
+    margin-right:auto;
+    margin-inline-start:15px;
+}
+
+.another-body{
+    border:3px solid black;
+    display:flow-root;
+}
+
+#img1{
+    float:left;
+    margin-left:10px;
+}
+#img2{
+    float:right;
+    margin-right:10px;
+}
+.overflows-{
+    height:75px;
+    margin-bottom:10px;
+    border:2px solid;
+    overflow:scroll;
+}
+.display{
+    display:inline-block;
+    background-color:red;
+    height:50px;
+    width:50px;
+    
+}
+#container{
+    background-color:rgb(13, 255, 0); /* relative allows you to maneuver it around such as left, right etc, static leaves it static and disregards it, thats the default position, absolute, keeps it to its nearest ancestor, and fixed doesn't move when you scroll */
+    height:100px;
+    width:100px;
+    position:fixed;
+    top:50px;
+    left:100px;
+}
+#container2{
+    background-color:red;
+    height:50px;
+    width:50px;
+    position:absolute;
+    text-align:center;
+    left:25px;
+}
+.another-container{
+    border:2px solid black;
+    height: auto;
+    width: 50%;
+    float:left;
+    padding:25px;
+    text-align:center;
+    max-width:50%;
+
+}
+.flexbox{
+    display:flex;
+    border:5px solid black;
+    width:20%;
+    height:50vh;
+    /*flex-direction:row-reverse;*/
+    justify-content:flex-start;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-content:flex-start;
+    align-content:space-evenly;
+    /*align-items:baseline;*/
+    column-gap:2em;
+    row-gap:2em;
+
+    
+}
+.box-0{
+    height:50px;
+    width:50px;
+
+}
+#box-a{
+    background-color:red;
+    align-self:center;
+}
+#box-b{
+    background-color:blue;
+}
+#box-c{
+    background-color:orange;
+}
+#box-d{
+    background-color:green;
+
+}
