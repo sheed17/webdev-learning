@@ -734,5 +734,108 @@ counter.increment();
 counter.increment();
 */
 
-console.log("Hello");
 
+//ES6 modules exporting and using that in other js file
+/*
+import {PI, getArea} from './mathUtil.js';
+
+console.log(PI)
+
+const circumArea = getArea(3);
+console.log(circumArea);
+*/
+
+
+//asynchronous tasks that work concurrently, JS is a single thread and this allows them to work side by side together and not wait for one to occur then the other to begin
+// with callback the function called within the function is executed after the outer function
+
+/*
+
+function func1(callback){
+    setTimeout(() => {
+        console.log("Task1");
+        callback();
+    }, 3000)
+}
+
+function func2(){
+    console.log("Task2");
+    console.log("Task3");
+    console.log("Task4");
+}
+
+func1(func2)
+*/
+
+
+
+
+//Error handling
+////try, catch, 
+/*
+try{
+    const dividend = window.prompt("Enter dividend");
+    const divisor = window.prompt("Enter divisor");
+
+    const result = dividend / divisor;
+
+    if (divisor == 0){
+        throw new Error("You can't divide by zero");
+    }
+    if(isNaN(dividend) || isNaN(divisor)){
+        throw new Error("Type in Numbers");
+    }
+    console.log(result);   
+}
+catch(error){
+    console.error(error);
+}
+finally{
+    console.log("You have reached the end");
+}
+
+*/
+
+// document.getElementById)()
+// document.getElementsClassName()
+// document.getElementsByTagName()
+// document.querySelector()
+// document.querySelectorAll()
+
+
+const myWelcome = document.getElementById("myWelcome");
+myWelcome.style.backgroundColor = 'red';
+myWelcome.style.textAlign = 'center';
+
+const fruits = document.getElementsByClassName("fruits");
+console.log(fruits);
+
+for(let fruit of fruits){
+    fruit.style.backgroundColor = 'yellow';
+}
+fruits[0].style.backgroundColor = 'purple';
+
+
+const h4Elements = document.getElementsByTagName("h4");
+for(let h4elements of h4Elements){
+    h4elements.style.color = 'blue';
+}
+
+
+h4Elements[0].style.color = 'orange';
+
+const queryList = document.querySelector(".fruits");
+queryList.style.backgroundColor = 'blue';
+
+const element = document.querySelector("li");
+element.style.backgroundColor = 'yellow';
+
+
+const allElements = document.querySelectorAll("li");
+
+
+for(let elements of allElements){
+    elements.style.backgroundColor = 'red';
+}
+
+allElements[0].style.backgroundColor = 'purple';
