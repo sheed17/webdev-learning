@@ -509,12 +509,230 @@ console.log(car1.model);
 */
 
 
+/*
+class User{
+    static userCount = 0;
+    
+    constructor(username){
+        this.username = username;
+        User.userCount++;
+    }
+
+    displayUser(){
+        console.log(`Username: ${this.username}`);
+        console.log(`Current users on the app: ${User.userCount}`);
+    }
+}
+
+const user1 = new User("Yo");
+const user2 = new User("Bro")
+const user3 = new User("Wasup");
+
+user1.displayUser();
+*/
 
 
 
 
+/*
+/// Inheritance
+
+class Animal{
+    alive = true;
+
+    eat(){
+        console.log(`${this.name} is eating`);
+    }
+    sleep(){
+        console.log(`${this.name} is sleeping`);
+    }
+}
+
+class Rabbit extends Animal{
+    name = "Rabbit";
+
+    jumping(){
+        console.log(`${this.name} is jumping`);
+    }
+}
+
+
+const rabbit = new Rabbit();
+rabbit.eat();
+rabbit.sleep();
+rabbit.jumping();
+
+*/
 
 
 
 
+//Super keyword
+/*
+class Animal{
+    constructor(name, age){
+        this.name = name;
+        this.age = age
+    }
+
+    displayNameAndSpecies(){
+        console.log(`Name: ${this.name}, Species: ${this.species}`);
+    }
+}
+
+class Lion extends Animal{
+    species = "Lion";
+
+    constructor(name, age, isFast){
+        super(name, age);
+        this.isFast = isFast;
+    }
+}
+
+
+
+lion = new Lion("Bobby", 21, true);
+console.log(lion.name);
+console.log(lion.age);
+console.log(lion.isFast);
+lion.displayNameAndSpecies();
+*/
+
+
+/*
+// Getters and Setters
+class Animal{
+    constructor(name, species){
+        this.name = name;
+        this.species = species;
+    }
+
+    set name(newName){
+        this._name = newName;
+    }
+
+    set species(newSpecies){
+        this._species = newSpecies;
+    }
+
+    get name(){
+        return this._name;
+    }
+
+    get species(){
+        return this._species;
+    }
+
+}
+
+const animal = new Animal("None", "None");
+animal.name = "Johnny";
+animal.species = "Snake";
+
+console.log(animal.name);
+console.log(animal.species);
+
+//
+
+*/
+
+
+//Destructuring
+/*
+const person1 = {
+    firstName: "Bobby",
+    lastName: "Johnny",
+    age: 21,
+    job: "RN",
+}
+
+const person2 = {
+    firstName: "Smith",
+    lastName: "John",
+    age: 32,
+}
+
+const {firstName, lastName, age, job="Bot"} = person2;
+
+console.log(firstName);
+console.log(lastName);
+console.log(age);
+console.log(job);
+*/
+
+
+
+/*
+
+
+//Nested Objects
+const person1 = {
+    firstName: "Bob",
+    lastName: "John",
+    address: {
+        street: "Johnny way",
+        city: "Johnny city",
+        country: "Yukatan",
+    }
+}
+
+console.log(person1.address.street);
+*/
+//Nested Objects
+/*
+class Person{
+    constructor(name, age, ...address){
+        this.name = name;
+        this.age = age;
+        this.address = new Address(...address)
+    }
+}
+
+class Address{
+    constructor(city, street, zip){
+        this.city = city;
+        this.street = street;
+        this.zip = zip;
+    }
+}
+
+const person1 = new Person("John", 21, "Frecy", "Bob Way", 21311);
+console.log(person1.name);
+console.log(person1.address.city);
+*/
+
+//Closures
+//function defined in another function inner function has access to outer function
+//for increment we return the object because the object created for the function needs a shared variable if we do increment() the number resets and doesnt share which is why we return {increment}, similar to static
+/*
+function outer(){
+    
+    let message = "Hello";
+
+    function inner(){
+        console.log(message);
+    }
+    inner();
+}
+outer();
+*/
+/*
+function createCounter(){
+    let count = 0;
+
+    function increment(){
+        count++;
+        console.log(`Count increased to ${count}`);
+    }
+
+    return {increment:increment};
+}
+
+const counter = createCounter();
+counter.increment();
+counter.increment();
+counter.increment();
+*/
+
+console.log("Hello");
 
