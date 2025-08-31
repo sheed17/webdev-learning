@@ -796,13 +796,18 @@ finally{
 
 */
 
+
+
+
+/* Selectors */
+
 // document.getElementById)()
 // document.getElementsClassName()
 // document.getElementsByTagName()
 // document.querySelector()
 // document.querySelectorAll()
 
-
+/*
 const myWelcome = document.getElementById("myWelcome");
 myWelcome.style.backgroundColor = 'red';
 myWelcome.style.textAlign = 'center';
@@ -839,3 +844,289 @@ for(let elements of allElements){
 }
 
 allElements[0].style.backgroundColor = 'purple';
+
+*/ 
+
+// DOM navigation
+// firstElementChild
+// lastElementChild
+// nextElementSibling
+// previousElementSibling
+// parentElememt
+// children
+
+/*const element = document.getElementById("desserts");
+const lastElementChild = element.lastElementChild;
+lastElementChild.style.backgroundColor = 'red'*/
+
+/*const element = document.getElementById("desserts");
+const firstElement = element.firstElementChild;
+firstElement.style.backgroundColor = 'yellow';*/
+
+
+/*const element = document.getElementById('desserts');
+const nextElementSibling = element.nextElementSibling;
+nextElementSibling.style.backgroundColor = 'green';*/
+
+/*const element = document.getElementById('fruits');
+const previousElementSibling = element.previousElementSibling;
+previousElementSibling.style.backgroundColor = 'blue';*/
+
+/*const element = document.getElementById("desserts");
+const child = element.children;
+console.log(child);
+
+for(children of child){
+    children.style.backgroundColor = "red";
+}*/
+
+/// Appending, prepending, and inserting before
+/*
+const newH1 = document.createElement("h1");
+const newH2 = document.createElement("h1");
+const newH3 = document.createElement("h3");
+
+
+newH1.textContent = 'i like pizza';
+newH2.textContent = 'i like hotdogs';
+newH3.textContent = 'i like burgers';
+
+document.getElementById("box1").append(newH2);
+
+document.getElementById("box4").prepend(newH3);
+
+const box2 = document.getElementById("box2");
+document.body.insertBefore(newH1, box2);
+*/
+
+
+//addEventListener
+/*
+const myBox = document.getElementById("myBox");
+
+myBox.addEventListener("click", change =>
+{
+    change.target.style.backgroundColor = "blue";
+    change.target.textContent = 'bruh';
+}
+
+
+*/
+
+//Key events
+/*
+
+const myBox = document.getElementById("myBox");
+myBox.addEventListener("keydown", event =>
+{  
+    myBox.style.backgroundColor = 'yellow';
+    myBox.textContent = 'bruh';
+    console.log(`down ${event.key}`);
+}
+);
+
+myBox.addEventListener("keyup", event =>
+{  
+    myBox.style.backgroundColor = 'lightblue';
+    myBox.textContent = 'bro';
+    console.log(`up ${event.key}`);
+}
+);
+*/
+
+
+/*
+Hide and show 
+const myButton = document.getElementById("myButton");
+const myBox = document.getElementById("myBox");
+myButton.addEventListener("click", event =>{
+        myBox.style.display = 'none';
+        myButton.textContent = 'show';});
+*/
+
+
+
+/*
+//classLists
+
+let buttons = document.querySelectorAll(".myButtons");
+
+buttons.forEach(button => {
+    button.classList.add('enabled');
+} )
+
+buttons.forEach(button =>{
+    button.addEventListener("mouseover", event =>{
+        event.target.classList.toggle("hover");
+    })
+})
+
+buttons.forEach(button =>{
+    button.addEventListener("mouseout", event =>{
+        event.target.classList.toggle("hover");
+    })
+}
+)
+
+buttons.forEach(button =>{
+    button.addEventListener("click", event => {
+        event.target.classList.replace('enabled', 'disabled');
+    }
+    )
+})
+
+buttons.forEach(button =>{
+    console.log(button);
+})
+*/
+
+// too many callbacks
+/*
+
+function task1(callback){
+    setTimeout(() => {
+        console.log("Task1 complete");
+        callback();
+    }, 2000)
+}
+
+function task2(callback){
+    setTimeout(() => {
+        console.log("Task2 complete");
+        callback();
+    }, 3000)
+}
+
+function task3(callback){
+    setTimeout(() => {
+        console.log("Task3 complete");
+        callback();
+    }, 1500)
+}
+
+function task4(callback){
+    setTimeout(() => {
+        console.log("Task4 complete");
+        callback();
+    }, 1000)
+}
+
+
+task1(() => {
+    task2(() => {
+        task3(() => {
+            task4(() => {
+                
+            })
+        })
+    })
+})
+*/
+
+
+//promises - an object that manages asynchronous operations so you are not in callback hell
+
+// in the order as to which it called
+
+/*
+
+function walkDog(){
+    return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            const walkDog = true;
+
+            if(walkDog){
+                resolve("You walked the dog");
+            }
+            else{
+                reject("You didn't walk the dog");
+            }
+
+        }, 3000)
+    }
+    
+    
+    )
+
+}
+
+function takeOutTrash(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const tookTrashOut = true;
+
+            if(tookTrashOut){
+                resolve("You took out the trash");
+            }
+            else{
+                reject("You didnt take out the trash");
+            }
+        }, 2000)
+    })
+}
+
+function foldedLaundry(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            laundryFolded = false;
+            if(laundryFolded){
+                resolve("You folded the laundry");
+            }
+            else{
+                reject("You didnt fold the laundry");
+            }
+        }, 1000)
+    })
+}
+
+
+walkDog().then(value => {console.log(value); return takeOutTrash()})
+         .then(value => {console.log(value); return foldedLaundry()})
+         .then(value => {console.log(value); return console.log("completed")})
+         .catch(error => {console.error(error)});
+
+*/
+
+//async/wait
+
+function fetchUser(){
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Welcome user!");
+        }, 3000);
+        
+    })
+}
+
+function fetchPost(){
+    return new Promise(resolve =>{
+        setTimeout(() => {
+            resolve("New Post!");
+        }, 2000);
+    })
+}
+
+function fetchLike(){
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("New Comment!");
+        }, 1000);
+    })
+}
+
+async function handleData(){
+    try{
+        const user = await fetchUser();
+        const post = await fetchPost();
+        const like = await fetchLike();
+
+        console.log(user);
+        console.log(post);
+        console.log(like);
+    }
+    catch(error){
+        console.error("Error: Gathering Data Issue!");
+    }
+}
+
+handleData();
