@@ -1088,7 +1088,7 @@ walkDog().then(value => {console.log(value); return takeOutTrash()})
 */
 
 //async/wait
-
+/*
 function fetchUser(){
     return new Promise(resolve => {
         setTimeout(() => {
@@ -1130,3 +1130,78 @@ async function handleData(){
 }
 
 handleData();
+*/
+
+/* JSON
+
+//json JSON.stringify() converts a js object to a json string
+//JSON.parse() = converts a json string to a js object
+
+const person = {
+    "name": "Bob",
+    "age": 21,
+    "married": false,
+    "hobbies": ["swimming", "golfing", "climbing"]
+};
+
+const people = `[{
+    "name": "Steve",
+    "age" : 27,
+    "isEmployed": true,
+    "married": false
+}, 
+{
+    "name": "Bob",
+    "age" : 21,
+    "isEmployed": true,
+    "married": true
+
+
+},
+{
+    "name": "John",
+    "age" : 37,
+    "isEmployed": true,
+    "married": true
+}]`;
+
+const jsonString = JSON.stringify(person);  //converting object to a jsonString
+console.log(jsonString);
+
+const jsonStringToObject = JSON.parse(people); //converting json String to object
+console.log(jsonStringToObject);
+console.log(people);
+*/
+
+
+
+
+/*
+fetching info from json
+
+
+fetch("people.json")
+    .then(response => response.json())
+    .then(values => values.forEach(value => console.log(`Name: ${value.name}, Employed: ${value.isEmployed}`)))
+    .catch(error => console.error(error));
+
+
+*/
+
+//fetch data from API
+
+async function fetchData(){
+    try{
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+    if(!response.ok){
+        throw new Error("Error could not get URL!");
+    }
+    const data = await response.json();
+    console.log(data);
+
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+fetchData();
