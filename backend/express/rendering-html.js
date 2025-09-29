@@ -26,3 +26,8 @@ app.get("/", (req, res) => {
 })
 
 app.listen(3000);
+
+
+//rendering static html css js or whatever
+/*
+app.use(express.static("public")) //public is just the folder name containing the static html or whatever*/
